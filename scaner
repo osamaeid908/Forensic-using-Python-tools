@@ -1,24 +1,2 @@
-import os
+print("Files:")
 
-def scan_directory(directory):
-    """
-    Scans the specified directory and lists all files and folders.
-    :param directory: Path to the directory to scan.
-    """
-    try:
-        # List all files and directories in the specified directory
-        for root, dirs, files in os.walk(directory):
-            print(f"Scanning: {root}")
-            print("Directories:")
-            for dir in dirs:
-                print(f"  - {dir}")
-            print("Files:")
-            for file in files:
-                print(f"  - {file}")
-            print("-" * 40)
-
-if __name__ == "__main__":
-    # Specify the path to scan (e.g., C: drive or a specific folder)
-    drive_path = "C:/"
-    print(f"Starting scan of {drive_path}...")
-    scan_directory(drive_path)
