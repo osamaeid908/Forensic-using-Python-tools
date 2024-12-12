@@ -17,9 +17,6 @@ def scan_directory(directory):
                 print(f"  - {file}")
             print("-" * 40)
 
-    except Exception as e:
-        print(f"An error occurred: {e}")
-
 if __name__ == "__main__":
     # Specify the path to scan (e.g., C: drive or a specific folder)
     drive_path = "C:/"
