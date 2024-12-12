@@ -1,19 +1,27 @@
-# Forensic-using-Python-tools 🕵️‍♂️🔍
+import os
 
-**Forensic-using-Python-tools** is a Python-based tool designed to perform forensic analysis on various applications, including popular web browsers like **Chrome** and **Firefox**, as well as messaging platforms like **WhatsApp** and **Facebook**. This tool is useful for extracting critical information such as browsing history, cookies, cache data, chat logs, and more, making it a powerful tool for digital investigations. 
+def scan_directory(directory):
+    """
+    Scans the specified directory and lists all files and folders.
+    :param directory: Path to the directory to scan.
+    """
+    try:
+        # List all files and directories in the specified directory
+        for root, dirs, files in os.walk(directory):
+            print(f"Scanning: {root}")
+            print("Directories:")
+            for dir in dirs:
+                print(f"  - {dir}")
+            print("Files:")
+            for file in files:
+                print(f"  - {file}")
+            print("-" * 40)
 
-## Features 🛠️
+    except Exception as e:
+        print(f"An error occurred: {e}")
 
-- **Chrome Forensics**: Extracts browsing history, cookies, cache, and more.
-- **Firefox Forensics**: Analyzes Firefox profiles for history, cookies, and cache.
-- **WhatsApp Forensics**: Retrieves message history, images, videos, and chat logs.
-- **Facebook Forensics**: Collects activity data from Facebook, including messages and user interactions.
-
-## Installation 📥
-
-To use this tool, follow these simple steps:
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/yourusername/Forensic-using-Python-tools.git
+if __name__ == "__main__":
+    # Specify the path to scan (e.g., C: drive or a specific folder)
+    drive_path = "C:/"
+    print(f"Starting scan of {drive_path}...")
+    scan_directory(drive_path)
